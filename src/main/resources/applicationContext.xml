@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+    <bean id="color" class="Color">
+        <property name="baseColor" value="white"/>
+        <property name="textureColor" value="grey"/>
+    </bean>
+
+    <bean id="cat" class="Cat">
+        <property name="name" value="cat"/>
+        <property name="color" ref="color"/>
+    </bean>
+
+    <bean id="dog" class="Dog" autowire="byName">
+        <property name="name" value="dog"/>
+    </bean>
+
+    <bean id="elephant" class="Elephant" autowire="byType">
+        <property name="name" value="elephant"/>
+    </bean>
+
+    <bean id="frog" class="Frog" autowire="constructor">
+        <property name="name" value="frog"/>
+    </bean>
+
+
+</beans>
